@@ -1,0 +1,34 @@
+# i3 Improved Tiling Window Manager
+
+i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, the code is Free and Open Source Software (FOSS) under the BSD license. i3 is primarily targeted at advanced users and developers.
+
+Learn more about [i3](https://i3wm.org)
+
+## Brief Keybindings
+
+The Mod4 = Windows Key
+
+| Keys            | Action                         |
+| :-------------- | :----------------------------- |
+| MOD+Enter       | Open Terminal (bash)           |
+| MOD+q           | Close Window                   |
+| MOD+Shift+o     | dmenu recency                  |
+| MOD+1-8         | Change Desktop                 |
+| MOD+Shift+1-8   | Move focus window to desktop   |
+| MOD+r           | Risize window                  |
+| MOD+h		  | Focus window left	           |
+| MOD+j		  | Focus window down              |
+| MOD+k		  | Focus window up                |
+| MOD+l		  | Focus window right             |
+| MOD+F10	  | Split horizontally             |
+| MOD+F11	  | Split vertically               |
+| MOD+F12	  | Toggle		           |
+| MOD+Shift+space | Floating toggle                |
+| MOD+Shift+r	  | Restart i3		           |
+| MOD+9		  | Lock screen		           |
+| MOD+0           | System (lock, reboot, shutdown |
+
+For more keybindings check the i3 config file.
+
+(press q to exit)
+

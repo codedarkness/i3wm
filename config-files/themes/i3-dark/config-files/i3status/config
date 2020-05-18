@@ -1,0 +1,145 @@
+#  ____             _                     ____          _
+# |  _ \  __ _ _ __| | ___ __   ___  ___ / ___|___   __| | ___
+# | | | |/ _` | '__| |/ / '_ \ / _ \/ __| |   / _ \ / _` |/ _ \
+# | |_| | (_| | |  |   <| | | |  __/\__ \ |__| (_) | (_| |  __/
+# |____/ \__,_|_|  |_|\_\_| |_|\___||___/\____\___/ \__,_|\___|
+# -------------------------------------------------------------
+# https://darknesscode.com
+# https://github.com/codedarkness
+# -------------------------------------------------------------
+# i3status configuration file.
+# see "man i3status" for documentation.
+# -------------------------------------------------------------
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+###########################
+## general configuration ##
+###########################
+
+general {
+	output_format = "i3bar"
+	colors = false
+	markup = pango
+	interval = 5
+	color_good = "#2AA198"
+	color_bad = "#586E75"
+	color_degraded = "#DC322F"
+}
+
+################################
+## load modules, order matter ##
+################################
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "memory"
+order += "disk /"
+# order += "battery all"
+order += "volume master"
+# order += "wireless _first_"
+# order += "ethernet _first_"
+order += "tztime local"
+
+
+###############
+## cpu usage ##
+###############
+
+cpu_usage {
+        format = "<span color='#af601a'> CPU %usage </span>"
+}
+
+#####################
+## cpu temperature ##
+#####################
+
+cpu_temperature 0 {
+        format = "<span color='#5dade2'> TEM %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+################################
+## hard dirve space available ##
+################################
+
+disk "/" {
+        format = "<span color='#73c6b6'> HDD %avail </span>"
+        # format = " ⛁ %avail "
+}
+
+##################
+## wire network ##
+##################
+
+ethernet _first_ {
+## if you use %speed, i3status requires root privileges
+        format_up = "<span color='#73c6b6'> IP %ip </span> "
+        format_down = " NO LAN "
+}
+
+######################
+## wireless network ##
+######################
+
+wireless _first_ {
+        format_up = "<span color='#73c6b6'> %essid </span>"
+        format_down = " NO WIFI "
+}
+
+#############
+## battery ##
+#############
+
+battery all {
+        # format = " %status %percentage %remaining %emptytime "
+        format = " %status %percentage"
+        format_down = "No battery"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        # status_chr = ""
+        status_chr = "⚡"
+        # status_bat = "bat"
+        # status_bat = "☉"
+        status_bat = ""
+        # status_unk = "?"
+        status_unk = ""
+        # status_full = ""
+        status_full = "☻"
+        low_threshold = 15
+        threshold_type = time
+}
+
+#################
+## memory used ##
+#################
+
+memory {
+        format = "<span color='#d7bde2'> MEM %used </span>"
+        threshold_degraded = " 10% "
+        format_degraded = " MEMORY: %free "
+}
+
+###################
+## date and time ##
+###################
+
+tztime local {
+format = "<span color='#81a1c1'> %time </span>"
+       format_time = "%a %-d %b %I:%M"
+}
+
+###################
+## VOLUME MASTER ##
+###################
+
+volume master {
+        format = "<span color='#e59866'> VOL %volume </span>"
+        format_muted = " MUTED "
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
