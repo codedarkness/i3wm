@@ -13,7 +13,7 @@ This script just install and copy custom file for:
 * i3status custom (for status bar)
 * color schemes for i3wm
 
-![i3wm - darknesscode](https://github.com/codedarkness/spectrwm/blob/master/config-files/i3wm-b.png)
+![i3wm - darknesscode](https://github.com/codedarkness/i3wm/blob/master/config-files/i3wm-b.png)
 
 ## Software
 
