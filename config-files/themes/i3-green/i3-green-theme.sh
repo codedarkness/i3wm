@@ -49,11 +49,11 @@ sed -i 's/i3-Theme--.*/i3-Theme--Green/g' $HOME/.i3/config
 sed -i 's/background\ .*/background\ #222D31/g' $HOME/.i3/config
 sed -i 's/statusline\ .*/statusline\ #F9FAF9/g' $HOME/.i3/config
 
-sed -i 's/focused_workspace\  .*\ .*\ .*/focused_workspace\  #F9FAF9\ #16A085\ #292F34/g' $HOME/.i3/config
-sed -i 's/active_workspace\   .*\ .*\ .*/active_workspace\   #595B5B\ #353836\ #FDF6E3/g' $HOME/.i3/config
-sed -i 's/inactive_workspace\ .*\ .*\ .*/inactive_workspace\ #595B5B\ #222D31\ #EEE8D5/g' $HOME/.i3/config
-sed -i 's/binding_mode\       .*\ .*\ .*/binding_mode\       #16A085\ #2C2C2C\ #F9FAF9/g' $HOME/.i3/config
-sed -i 's/urgent_workspace\   .*\ .*\ .*/urgent_workspace\   #16A085\ #FDF6E3\ #E5201D/g' $HOME/.i3/config
+sed -i 's/focused_workspace\  .*\ .*\ .*/focused_workspace\  #222D31\ #222D31\ #1F618D/g' $HOME/.i3/config
+sed -i 's/active_workspace\   .*\ .*\ .*/active_workspace\   #222D31\ #222D31\ #FDF6E3/g' $HOME/.i3/config
+sed -i 's/inactive_workspace\ .*\ .*\ .*/inactive_workspace\ #222D31\ #222D31\ #EEE8D5/g' $HOME/.i3/config
+sed -i 's/binding_mode\       .*\ .*\ .*/binding_mode\       #222D31\ #222D31\ #F9FAF9/g' $HOME/.i3/config
+sed -i 's/urgent_workspace\   .*\ .*\ .*/urgent_workspace\   #222D31\ #222D31\ #E5201D/g' $HOME/.i3/config
 
 sed -i 's/client.focused\          .*\ .*\ .*\ .*/client.focused\          #556064\ #556064\ #80FFF9\ #FDF6E3/g' $HOME/.i3/config
 sed -i 's/client.focused_inactive\ .*\ .*\ .*\ .*/client.focused_inactive\ #2F3D44\ #2F3D44\ #1ABC9C\ #454948/g' $HOME/.i3/config

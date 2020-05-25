@@ -255,7 +255,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 ## Open applications on specific workspaces ##
 ##############################################
 
-assign [class="code"] $ws1
 assign [class="Brave"] $ws2
 assign [class="Pcmanfm"] $ws3
 
@@ -264,7 +263,7 @@ assign [class="Pcmanfm"] $ws3
 #################################################
 
 for_window [title="tremc_url"] floating enable
-for_window [title="rsync"] floating enable
+for_window [title="backup-system"] floating enable
 for_window [title="tremc"] floating enable
 
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -444,11 +443,11 @@ bar {
         separator  #454947
 
 #                          border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        focused_workspace  #222D31 #222D31 #1F618D
+        active_workspace   #222D31 #222D31 #FDF6E3
+        inactive_workspace #222D31 #222D31 #EEE8D5
+        binding_mode       #222D31 #222D31 #F9FAF9
+        urgent_workspace   #222D31 #222D31 #E5201D
     }
 }
 
