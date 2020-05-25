@@ -36,11 +36,11 @@ sudo sed -i 's/icon-theme-name=.*/icon-theme-name=Papirus-Dark/g' /etc/lightdm/s
 	echo "### ------------------------> Slick-Greeter has been changed"
 
 ## copy files to the home
-cp -avr config-files/Xresources $HOME/.Xresources &&
+cp -avr config-files/themes/i3-dark-blue/config-files/Xresources $HOME/.Xresources &&
 	echo "### ------------------------> The new xresources config has been copied"
 
 ## copy files and directories to /home/.confi
-cp -arv config-files/i3status/ $HOME/.config/ &&
+cp -arv config-files/themes/i3-dark-blue/config-files/i3status/ $HOME/.config/ &&
 	echo "### ------------------------> The new i3status config has been copied"
 
 ## i3 theme colors
