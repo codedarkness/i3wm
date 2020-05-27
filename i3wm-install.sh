@@ -35,9 +35,9 @@ config-files() {
 	echo " Getting ready custom files for this new installation";
 	sleep 2;
 
-	sudo cp slick-greeter.conf /etc/lightdm/ &&
+	sudo cp config-files/slick-greeter.conf /etc/lightdm/ &&
 		echo " slick-greeter custom file has been copied";
-	cp -ar config-files/concky $HOME/.config/conky &&
+	cp -ar config-files/concky/* $HOME/.config/conky/ &&
 		echo " conky has been copied";
 	cp -ar config-files/dunst $HOME/.config/dunst &&
 		echo " dunst custom config has been copied";
