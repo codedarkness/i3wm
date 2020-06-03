@@ -41,9 +41,9 @@ config-files() {
 		echo " conky has been copied";
 	cp -ar config-files/dunst $HOME/.config/dunst &&
 		echo " dunst custom config has been copied";
-	cp -ar config-files/i3 $HOME/.i3 &&
+	cp -ar config-files/i3/* $HOME/.i3 &&
 		echo " i3 custom config has been copied";
-	cp -ar config-files/i3status $HOME/.config/i3status &&
+	cp -ar config-files/i3status/* $HOME/.config/i3status &&
 		echo " i3status custom config has been copied";
 	cp -ar config-files/dmenurc $HOME/.dmenurc &&
 		echo " dmenurc custom config has been copied";
