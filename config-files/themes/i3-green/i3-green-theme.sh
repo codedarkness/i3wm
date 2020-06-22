@@ -51,7 +51,7 @@ sed -i 's/statusline\ .*/statusline\ #F9FAF9/g' $HOME/.i3/config
 
 sed -i 's/focused_workspace\  .*\ .*\ .*/focused_workspace\  #222D31\ #222D31\ #1F618D/g' $HOME/.i3/config
 sed -i 's/active_workspace\   .*\ .*\ .*/active_workspace\   #222D31\ #222D31\ #FDF6E3/g' $HOME/.i3/config
-sed -i 's/inactive_workspace\ .*\ .*\ .*/inactive_workspace\ #222D31\ #222D31\ #EEE8D5/g' $HOME/.i3/config
+sed -i 's/inactive_workspace\ .*\ .*\ .*/inactive_workspace\ #222D31\ #222D31\ #839192/g' $HOME/.i3/config
 sed -i 's/binding_mode\       .*\ .*\ .*/binding_mode\       #222D31\ #222D31\ #F9FAF9/g' $HOME/.i3/config
 sed -i 's/urgent_workspace\   .*\ .*\ .*/urgent_workspace\   #222D31\ #222D31\ #E5201D/g' $HOME/.i3/config
 
@@ -66,7 +66,8 @@ sed -i 's/client.background\       .*/client.background\                   #2B2C
 
 ## change color in dmenurc
 sed -i 's/DMENU_NB=.*/DMENU_NB="#222D31"/g' $HOME/.dmenurc
-sed -i 's/DMENU_SB=.*/DMENU_SB="#16A085"/g' $HOME/.dmenurc &&
+sed -i 's/DMENU_SB=.*/DMENU_SB="#222D31"/g' $HOME/.dmenurc &&
+sed -i 's/DMENU_NF=.*/DMENU_NF="#4D5656"/g' $HOME/.dmenurc &&
 	echo "### -------------------------> dmenu color scheme has been applied"
 
 ## change theme and icons in .gtkrc-2.0
@@ -85,6 +86,12 @@ sed -i 's/bgcolor=.*/bgcolor=#222D31/g' $HOME/.config/nitrogen/bg-saved.cfg &&
 ## change kvantum theme
 sed -i 's/theme=.*/theme=KvAdaptaDark/g' $HOME/.config/Kvantum/kvantum.kvconfig &&
 	echo "### -------------------------> kvantum color scheme has been applied"
+
+## dmenu custom
+sed -i 's/nb="-nb #.*"/nb="-nb #222D31"/g' ~/Documents/scripts/dmenu-programs.sh &&
+sed -i 's/sb="-sb #.*"/sb="-sb #222D31"/g' ~/Documents/scripts/dmenu-programs.sh &&
+sed -i 's/nf="-nf #.*"/nf="-nf #4D5656"/g' ~/Documents/scripts/dmenu-programs.sh &&
+	echo " ### ----> dmenu colors has canged"
 
 echo "------------------------------------------------------------"
 
