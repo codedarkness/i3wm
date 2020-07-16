@@ -75,7 +75,7 @@ bindsym $mod+q kill
 
 bindsym $mod+o exec --no-startup-id ~/Documents/scripts/dmenu-programs.sh
 bindsym $mod+Ctrl+o exec terminal -e ~/Documents/scripts/tremc_url.sh
-bindsym $mod+Shift+o exec --no-startup-id dmenu_recency -b
+bindsym $mod+Shift+o exec --no-startup-id dmenu_recency
 
 ##############################
 ##  launch categorized menu ##

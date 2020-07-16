@@ -33,24 +33,40 @@ debian-based() {
 config-files() {
 	echo ""
 	echo " Getting ready custom files for this new installation";
+	echo ""
 	sleep 2;
 
 	sudo cp config-files/slick-greeter.conf /etc/lightdm/ &&
-		echo " slick-greeter custom file has been copied";
-	cp -ar config-files/concky/* $HOME/.config/conky/ &&
-		echo " conky has been copied";
+	echo " slick-greeter custom file has been copied" || echo " Upsss!"
+	echo ""
+
+	cp -ar config-files/conky/ $HOME/.config/ &&
+	echo " conky has been copied" || echo " Something went wrong!"
+	echo ""
+
 	cp -ar config-files/dunst $HOME/.config/dunst &&
-		echo " dunst custom config has been copied";
-	cp -ar config-files/i3/* $HOME/.i3 &&
-		echo " i3 custom config has been copied";
-	cp -ar config-files/i3status/* $HOME/.config/i3status &&
-		echo " i3status custom config has been copied";
+	echo " dunst custom config has been copied" || echo " Holy sssomthing is not good!"
+	echo ""
+
+	cp -ar config-files/i3/config $HOME/.i3/config &&
+	echo " i3 custom config has been copied" || echo " Upsss!"
+	echo ""
+
+	cp -ar config-files/i3status/ $HOME/.config/ &&
+	echo " i3status custom config has been copied" || echo " Ok is not you, is the computer"
+	echo ""
+
 	cp -ar config-files/dmenurc $HOME/.dmenurc &&
-		echo " dmenurc custom config has been copied";
+	echo " dmenurc custom config has been copied" || echo " Upsss!"
+	echo ""
+
 	cp -ar config-files/gtkrc-2.0 $HOME/.gtkrc-2.0 &&
-		echo " gtkrc-2.0 custom config has been copied";
+	echo " gtkrc-2.0 custom config has been copied" || echo " Huston we have a problem!"
+	echo ""
+
 	cp -ar config-files/Xresources $HOME/.Xresources &&
-		echo " Xreoursers has been copied"
+	echo " Xreoursers has been copied" || echo " Uppssss!"
+	echo ""
 }
 
 keybindings() {
@@ -82,15 +98,15 @@ until [ "$selection" = "0" ]; do
 	echo " | ||__ <\ \ /\ / / '_ ' _ \  "
 	echo " | |___) |\ V  V /| | | | | | "
 	echo " |_|____/  \_/\_/ |_| |_| |_| "
-	echo " ----------------------------------------"
-	echo " ###  Improved Tiling Window Manager  ###"
-	echo " ----------------------------------------"
+	echo ""
+	echo " Improved Tiling Window Manager"
 	echo ""
 	echo " 1 - Arch Based"
 	echo " 2 - Debian Based"
 	echo " 3 - Copy (custom) config files"
 	echo " 4 - Keybindings"
 	echo " 5 - themes (change colors)"
+	echo ""
 	echo " 0 - Exit"
 	echo ""
 	echo -n " Enter selection [1 - 0] : "

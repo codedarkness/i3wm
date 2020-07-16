@@ -23,17 +23,27 @@
 # -----------------------------------------------------------------
 
 i3wm() {
-	echo " Installing spectrwm";
+	echo ""
+	echo " Installing i3wm";
+	echo ""
+	sleep 2;
+
 	pacman -Qs i3-wm &&
-		echo " i3 is installed in your system" ||
-		sudo pacman -S --noconfirm --needed i3-wm
+	echo " i3 is installed in your system" ||
+	sudo pacman -S --noconfirm --needed i3-wm
+	echo ""
 }
 
 conky() {
+	echo ""
 	echo " Installing conky";
+	echo ""
+	sleep 2;
+
 	pacman -Qs conky &&
-		echo " conky is installed in your system" ||
-		sudo pacman -S --noconfirm --needed conky
+	echo " conky is installed in your system" ||
+	sudo pacman -S --noconfirm --needed conky
+	echo ""
 }
 
 press_enter() {
@@ -50,13 +60,19 @@ incorrect_selection() {
 until [ "$selection" = "0" ]; do
 	clear
 	echo ""
-	echo " -----------------------------------------------"
-	echo " ###----------- Arch Based System -----------###"
-	echo " ## i3wm  --  Tiling Window  Manager for X11  ##"
-	echo " -----------------------------------------------"
+	echo " DarknessCode"
+	echo "                    _     ____                     _ "
+	echo "     /\            | |   |  _ \                   | |"
+	echo "    /  \   _ __ ___| |__ | |_) | __ _ ___  ___  __| |"
+	echo "   / /\ \ | '__/ __| '_ \|  _ < / _' / __|/ _ \/ _' |"
+	echo "  / ____ \| | | (__| | | | |_) | (_| \__ \  __/ (_| |"
+	echo " /_/    \_\_|  \___|_| |_|____/ \__,_|___/\___|\__,_|"
+	echo ""
+	echo " i3wm a Tiling Window Manager for X11"
 	echo ""
 	echo " 1 - Install i3"
 	echo " 2 - Install Conky"
+	echo ""
 	echo " 0 - Back"
 	echo ""
 	echo -n " Enter selection [1 - 0] : "
