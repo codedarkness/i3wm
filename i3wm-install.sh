@@ -44,7 +44,7 @@ config-files() {
 	echo " conky has been copied" || echo " Something went wrong!"
 	echo ""
 
-	cp -ar config-files/dunst $HOME/.config/dunst &&
+	cp -ar config-files/dunst $HOME/.config/ &&
 	echo " dunst custom config has been copied" || echo " Holy sssomthing is not good!"
 	echo ""
 
