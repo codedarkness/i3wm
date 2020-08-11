@@ -22,16 +22,16 @@
 #
 # -----------------------------------------------------------------
 
-dark-theme() {
-	config-files/themes/i3-dark/i3-dark-theme.sh
+dark-color() {
+	config-files/themes/i3-dark-color.sh
 }
 
-dracula-theme() {
-	config-files/themes/i3-dracula/i3-dracula-theme.sh
+dracula-color() {
+	config-files/themes/i3-dracula-color.sh
 }
 
-green-theme() {
-	config-files/themes/i3-green/i3-green-theme.sh
+green-color() {
+	config-files/themes/i3-green-color.sh
 }
 
 press_enter() {
@@ -48,14 +48,20 @@ incorrect_selection() {
 until [ "$selection" = "0" ]; do
 	clear
 	echo ""
-	echo " -----------------------------------------------"
-	echo " ###-----------   Color  Themes   -----------###"
-	echo " ##--- i3wm tiling window manager for X11 --- ##"
-	echo " -----------------------------------------------"
+	echo " DarknessCode"
+	echo "  _ ____            _                 "
+	echo " (_)___ \          | |                "
+	echo "  _  __) | ___ ___ | | ___  _ __ ___  "
+	echo " | ||__ < / __/ _ \| |/ _ \| '__/ __| "
+	echo " | |___) | (_| (_) | | (_) | |  \__ \ "
+	echo " |_|____/ \___\___/|_|\___/|_|  |___/ "
 	echo ""
-	echo " 1 - Dark Color Scheme"
-	echo " 2 - Dracula Color Scheme"
-	echo " 3 - Green Color Scheme"
+	echo " Colors for i3"
+	echo ""
+	echo " 1 - Dark Color"
+	echo " 2 - Dracula Color"
+	echo " 3 - Green Color"
+	echo ""
 	echo " 0 - Back"
 	echo ""
 	echo -n " Enter selection [1 - 0] : "
@@ -63,9 +69,9 @@ until [ "$selection" = "0" ]; do
 	echo ""
 
 	case $selection in
-		1) clear; dark-theme	  ; press_enter ;;
-		2) clear; dracula-theme	  ; press_enter ;;
-		3) clear; green-theme	  ; press_enter ;;
+		1) clear; dark-color	  ; press_enter ;;
+		2) clear; dracula-color	  ; press_enter ;;
+		3) clear; green-color	  ; press_enter ;;
 		0) clear; exit ;;
 		*) clear; incorrect_selection ; press_enter ;;
 	esac

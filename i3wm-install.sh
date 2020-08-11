@@ -22,12 +22,8 @@
 #
 # -----------------------------------------------------------------
 
-arch-based() {
-	config-files/systems/arch-based.sh
-}
-
-debian-based() {
-	config-files/systems/debian-based.sh
+install-i3wm() {
+	config-files/systems/install-i3wm.sh
 }
 
 config-files() {
@@ -36,35 +32,59 @@ config-files() {
 	echo ""
 	sleep 2;
 
-	sudo cp config-files/slick-greeter.conf /etc/lightdm/ &&
+	sudo cp config-files/configs/slick-greeter.conf /etc/lightdm/ &&
 	echo " slick-greeter custom file has been copied" || echo " Upsss!"
 	echo ""
 
-	cp -ar config-files/conky/ $HOME/.config/ &&
-	echo " conky has been copied" || echo " Something went wrong!"
+
+	## conky directory
+	### Check for dir, if not found create it using the mkdir ###
+	dldir="$HOME/.config/conky"
+	[ ! -d "$dldir" ] && mkdir -p "$dldir" &&
+	echo " conky directory was created" || echo "Shhhh! not again"
 	echo ""
 
-	cp -ar config-files/dunst $HOME/.config/ &&
+	cp -af config-files/configs/conky_live $HOME/.config/conky/ &&
+	cp -af config-files/configs/conky_shortcuts_i3 $HOME/.config/conky/ &&
+	echo " conky has been copied" || echo " conky directory already exist"
+	echo ""
+
+
+	## dunst directory
+	### Check for dir, if not found create it using the mkdir ###
+	dnustdir="$HOME/.config/dnust/"
+	[ ! -d "$dnustdir" ] && mkdir -p "$dnustdir" &&
+	echo " dnust directory was created" || echo " dnust directory already exist"
+	echo ""
+
+	cp -ar config-files/configs/dunstrc $HOME/.config/dnust/ &&
 	echo " dunst custom config has been copied" || echo " Holy sssomthing is not good!"
 	echo ""
 
-	cp -ar config-files/i3/config $HOME/.i3/config &&
+	cp -ar config-files/configs/i3 $HOME/.i3/config &&
 	echo " i3 custom config has been copied" || echo " Upsss!"
 	echo ""
 
-	cp -ar config-files/i3status/ $HOME/.config/ &&
+	## i3status directory
+	### Check for dir, if not found create it using the mkdir ###
+	i3sdir="$HOME/.config/i3status"
+	[ ! -d "$i3sdir" ] && mkdir -p "$i3sdir" &&
+	echo " i3status directory was created" || echo " i3status directory already exist"
+	echo ""
+
+	cp -ar config-files/configs/i3status $HOME/.config/i3status/config &&
 	echo " i3status custom config has been copied" || echo " Ok is not you, is the computer"
 	echo ""
 
-	cp -ar config-files/dmenurc $HOME/.dmenurc &&
+	cp -ar config-files/configs/dmenurc $HOME/.dmenurc &&
 	echo " dmenurc custom config has been copied" || echo " Upsss!"
 	echo ""
 
-	cp -ar config-files/gtkrc-2.0 $HOME/.gtkrc-2.0 &&
+	cp -ar config-files/configs/gtkrc-2.0 $HOME/.gtkrc-2.0 &&
 	echo " gtkrc-2.0 custom config has been copied" || echo " Huston we have a problem!"
 	echo ""
 
-	cp -ar config-files/Xresources $HOME/.Xresources &&
+	cp -ar config-files/configs/Xresources $HOME/.Xresources &&
 	echo " Xreoursers has been copied" || echo " Uppssss!"
 	echo ""
 }
@@ -101,11 +121,10 @@ until [ "$selection" = "0" ]; do
 	echo ""
 	echo " Improved Tiling Window Manager"
 	echo ""
-	echo " 1 - Arch Based"
-	echo " 2 - Debian Based"
-	echo " 3 - Copy (custom) config files"
-	echo " 4 - Keybindings"
-	echo " 5 - themes (change colors)"
+	echo " 1 - Install"
+	echo " 2 - Copy (custom) config files"
+	echo " 3 - Keybindings"
+	echo " 4 - themes (change colors)"
 	echo ""
 	echo " 0 - Exit"
 	echo ""
@@ -114,11 +133,10 @@ until [ "$selection" = "0" ]; do
 	echo ""
 
 	case $selection in
-		1) clear; arch-based   ;;
-		2) clear; debian-based ;;
-		3) clear; config-files  ; press_enter ;;
-		4) clear; keybindings  ;;
-		5) clear; themes       ;;
+		1) clear; install-i3wm ;;
+		2) clear; config-files  ; press_enter ;;
+		3) clear; keybindings  ;;
+		4) clear; themes       ;;
 		0) clear; exit ;;
 		*) clear; incorrect_selection ; press_enter ;;
 	esac
